@@ -18,11 +18,30 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void{
     this.formLogin = this.formBuilder.group({
-      email:['', [Validators.required]]
+      name: ['',
+        [
+          Validators.required,
+          Validators.minLength(10)
+        ]
+
+      ],
+      
+      email:['', 
+        [
+          Validators.required,
+          Validators.email
+        ]
+      ],
+      mensaje:['', 
+        [
+          Validators.required,
+        ]
+      ]
     })
   }
-
+  CamposCorrectos = false
   send():any{
-    console.log(this.formLogin.value)
+    this.CamposCorrectos = this.formLogin.valid;
   }
+
 }

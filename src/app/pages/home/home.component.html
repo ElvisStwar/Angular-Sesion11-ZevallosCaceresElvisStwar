@@ -1,4 +1,4 @@
-<div >
+<div class="row">
     <form [formGroup]="formLogin" (submit)="send()">
         <div>
             <label for="">Nombres y apellidos</label>
@@ -10,10 +10,17 @@
         </div>
         <div>
             <label for="">Mensaje</label>
-            <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+            <textarea name="" id="mensaje" cols="30" rows="10" formControlName="mensaje"></textarea>
         </div>
         <div>
-            <button>Send</button>
+            <button [disabled]="formLogin.invalid">Confirmar</button>
         </div>
+        <div>
+            <p *ngIf="CamposCorrectos">Correcto</p>
+        </div>
+        <div>
+            <h3>{{formLogin.value | json}}</h3>
+        </div>
+
     </form>
 </div>
