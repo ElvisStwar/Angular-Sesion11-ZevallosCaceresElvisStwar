@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div >
+    <form [formGroup]="formLogin" (submit)="send()">
+        <div>
+            <label for="">Nombres y apellidos</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="">Mensaje</label>
+            <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button>Send</button>
+        </div>
+    </form>
+</div>
