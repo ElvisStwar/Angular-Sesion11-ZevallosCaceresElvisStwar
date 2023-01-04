@@ -1,26 +1,30 @@
-<div class="row">
-    <form [formGroup]="formLogin" (submit)="send()">
-        <div>
-            <label for="">Nombres y apellidos</label>
-            <input type="text" id="name" formControlName="name">
+<div class="row justify-content-center">
+    <div class="col-5 mt-5">
+        <div class="border p-4">
+            <form [formGroup]="formLogin" (submit)="send()">
+                <div class="mb-2">
+                    <label for="">Nombres y apellidos</label>
+                    <input class="form-control" type="text" id="name" formControlName="name">
+                </div>
+                <div class="mb-2">
+                    <label for="">Email</label>
+                    <input class="form-control" type="text" id="email" formControlName="email">
+                </div>
+                <div class="mb-2">
+                    <label for="">Mensaje</label>
+                    <textarea class="form-control" name="" id="mensaje" cols="30" rows="10" formControlName="mensaje"></textarea>
+                </div>
+                <div class="mb-2">
+                    <button class="btn btn-primary" [disabled]="formLogin.invalid">Confirmar</button>
+                </div>
+                <div>
+                    <p *ngIf="CamposCorrectos">Todos los Datos son validos</p>
+                </div>
+                <div>
+                    <h6>{{formLogin.value | json}}</h6>
+                </div>
+                
+            </form>
         </div>
-        <div>
-            <label for="">Email</label>
-            <input type="text" id="email" formControlName="email">
-        </div>
-        <div>
-            <label for="">Mensaje</label>
-            <textarea name="" id="mensaje" cols="30" rows="10" formControlName="mensaje"></textarea>
-        </div>
-        <div>
-            <button [disabled]="formLogin.invalid">Confirmar</button>
-        </div>
-        <div>
-            <p *ngIf="CamposCorrectos">Correcto</p>
-        </div>
-        <div>
-            <h3>{{formLogin.value | json}}</h3>
-        </div>
-
-    </form>
+    </div>
 </div>
