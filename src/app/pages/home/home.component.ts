@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -43,5 +44,8 @@ export class HomeComponent implements OnInit{
   send():any{
     this.CamposCorrectos = this.formLogin.valid;
   }
-
+  
+ 
+  
+  
 }
